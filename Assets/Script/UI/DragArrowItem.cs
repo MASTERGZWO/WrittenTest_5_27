@@ -10,7 +10,6 @@ namespace WrittenTest {
         public Transform tfm_arrowHead;
         public GameObject go_ArrowStem;
         public List<GameObject> m_ArrowStem;
-        public ClickPenetrate m_ClickPenetrate;
 
         //0：起始点 1：控制点1 2：控制点2 3：终点
         private Vector2[] m_Points = new Vector2[4];
@@ -31,7 +30,6 @@ namespace WrittenTest {
         private void StaticBind() {
             tfm_root = gameObject.transform;
             tfm_arrowHead = tfm_root.Find("ArrowHead");
-            m_ClickPenetrate = tfm_root.GetComponent<ClickPenetrate>();
         }
 
         private void DynamicBind() {

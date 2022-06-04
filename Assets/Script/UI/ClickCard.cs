@@ -5,12 +5,15 @@ using UnityEngine.EventSystems;
 
 namespace WrittenTest {
     public class ClickCard : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler {
+        #region 变量
         private Action m_PointerDownEvent;
         private Action m_PointerUpEvent;
         private string m_TargetName;
         private Action m_DragEvent;
         private Action m_RecoverEvent;
+        #endregion
 
+        #region 属性
         public Action PointerDownEvent {
             set => m_PointerDownEvent = value;
         }
@@ -30,7 +33,9 @@ namespace WrittenTest {
         public Action PointUpEvent {
             set => m_PointerUpEvent = value;
         }
+        #endregion
 
+        #region 点击拖拽事件
         public void OnPointerDown(PointerEventData eventData) {
             m_PointerDownEvent?.Invoke();
         }
@@ -56,5 +61,6 @@ namespace WrittenTest {
 
             m_RecoverEvent?.Invoke();
         }
+        #endregion
     }
 }
